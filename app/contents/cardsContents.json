@@ -1,0 +1,22 @@
+[
+  {
+    "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "title": "Mountain Landscape",
+    "subtitle": "Beautiful mountain view at sunset"
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800",
+    "title": "Ocean Waves",
+    "subtitle": "Peaceful ocean scene with waves"
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
+    "title": "Forest Path",
+    "subtitle": "Mysterious forest pathway"
+  },
+  {
+    "src": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800",
+    "title": "Desert Dunes",
+    "subtitle": "Golden sand dunes in the desert"
+  }
+]
