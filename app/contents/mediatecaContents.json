@@ -1,0 +1,30 @@
+[
+  {
+    "mediaId": "media-001",
+    "contentName": "Mountain Landscape Image",
+    "publicationTimestamp": "2024-01-15T10:30:00Z",
+    "contentSrc": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "existsIn": ["post-001"]
+  },
+  {
+    "mediaId": "media-002",
+    "contentName": "Ocean Waves Image",
+    "publicationTimestamp": "2024-01-16T14:20:00Z",
+    "contentSrc": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800",
+    "existsIn": ["post-002"]
+  },
+  {
+    "mediaId": "media-003",
+    "contentName": "Forest Path Image",
+    "publicationTimestamp": "2024-01-17T09:15:00Z",
+    "contentSrc": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
+    "existsIn": ["post-003"]
+  },
+  {
+    "mediaId": "media-004",
+    "contentName": "Desert Dunes Image",
+    "publicationTimestamp": "2024-01-18T16:45:00Z",
+    "contentSrc": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800",
+    "existsIn": ["post-004"]
+  }
+]
