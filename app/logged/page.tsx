@@ -2,6 +2,8 @@
 
 import React, { FC, useState } from 'react';
 import TopNav from './TopNav';
+import MediatecaModal from './MediatecaModal';
+import { MediaContent } from './types';
 
 interface LoggedPageProps {
   
@@ -13,6 +15,7 @@ const LoggedPage: FC<LoggedPageProps> = ({ }) => {
   const [useSrc, setUseSrc] = useState(true);
   const [imageSrc, setImageSrc] = useState('');
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const [showMediatecaModal, setShowMediatecaModal] = useState(false);
 
   const handleClearAll = () => {
     setTitle('');
@@ -25,10 +28,16 @@ const LoggedPage: FC<LoggedPageProps> = ({ }) => {
     // Funcionalidad pendiente
   };
 
+  const handleSelectMedia = (media: MediaContent) => {
+    setImageSrc(media.contentSrc);
+    setUseSrc(true);
+  };
+
   return (
     <div className="min-h-screen bg-gray-100">
       <TopNav />
       <div className="max-w-2xl mx-auto p-6">
+        <p className="text-2xl font-bold text-gray-600 mb-4 text-center py-12">Creación de post</p>
         <form className="bg-white rounded-lg shadow-md p-6 space-y-6">
           <div>
             <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-2">
@@ -59,9 +68,12 @@ const LoggedPage: FC<LoggedPageProps> = ({ }) => {
           </div>
 
           <div>
+            <div className='flex flex-row justify-between'>
+
+            <p className="text-sm font-medium text-gray-700 mb-2">Imagen</p>
             <label className="flex items-center space-x-3 mb-4">
               <span className="text-sm font-medium text-gray-700">
-                {useSrc ? 'Introducir URL' : 'Adjuntar imagen'}
+                {useSrc ? 'Introducir URL' : 'Cargar desde mediateca'}
               </span>
               <button
                 type="button"
@@ -75,7 +87,9 @@ const LoggedPage: FC<LoggedPageProps> = ({ }) => {
                 />
               </button>
             </label>
+            </div>
 
+            
             {useSrc ? (
               <input
                 key="image-src-input"
@@ -86,13 +100,13 @@ const LoggedPage: FC<LoggedPageProps> = ({ }) => {
                 placeholder="Ingresa la URL de la imagen"
               />
             ) : (
-              <input
-                key="image-file-input"
-                type="file"
-                accept="image/*"
-                onChange={(e) => setImageFile(e.target.files?.[0] || null)}
-                className="cursor-pointer bg-gray-500 text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-400"
-              />
+              <button
+                type="button"
+                onClick={() => setShowMediatecaModal(true)}
+                className=" cursor-pointer w-full px-4 py-2 bg-blue-500   text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+              >
+                Abrir mediateca
+              </button>
             )}
           </div>
 
@@ -114,6 +128,11 @@ const LoggedPage: FC<LoggedPageProps> = ({ }) => {
           </div>
         </form>
       </div>
+      <MediatecaModal
+        isOpen={showMediatecaModal}
+        onClose={() => setShowMediatecaModal(false)}
+        onSelectMedia={handleSelectMedia}
+      />
     </div>
   );
 };
